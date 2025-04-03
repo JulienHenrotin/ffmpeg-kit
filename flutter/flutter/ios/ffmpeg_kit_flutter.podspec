@@ -132,4 +132,17 @@ Pod::Spec.new do |s|
     ss.ios.deployment_target = '10'
   end
 
+  s.default_subspec = 'precompiled-gpl'
+
+  s.subspec 'precompiled-gpl' do |ss|
+    ss.vendored_frameworks = 'Frameworks/ffmpegkit.xcframework',
+                             'Frameworks/libavcodec.xcframework',
+                             'Frameworks/libavdevice.xcframework',
+                             'Frameworks/libavfilter.xcframework',
+                             'Frameworks/libavformat.xcframework',
+                             'Frameworks/libavutil.xcframework',
+                             'Frameworks/libswresample.xcframework',
+                             'Frameworks/libswscale.xcframework'
+  end
+
 end
